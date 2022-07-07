@@ -5,3 +5,4 @@ document.body.append(homerElement)
 homerElement.setAttribute('src', homer)
 const header = document.querySelector(".header");
 header.style.backgroundColor = "black"
+console.log("123123")

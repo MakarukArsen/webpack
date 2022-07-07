@@ -9,7 +9,6 @@ module.exports = {
         filename: "bundle.js",
     },
     devServer: {
-        port: 2255,
         open: true,
     },
     plugins: [new HtmlWebpackPlugin({
