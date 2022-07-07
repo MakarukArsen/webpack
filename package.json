@@ -6,7 +6,9 @@
   "scripts": {
     "build": "webpack",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack server"
+    "start": "webpack server",
+    "deploy": "gh-pages -d dist"
+
   },
   "keywords": [
     "webpack",
@@ -15,7 +17,8 @@
   "author": "Arsen Makaruk",
   "license": "ISC",
   "dependencies": {
-    "file-loader": "^6.2.0"
+    "file-loader": "^6.2.0",
+    "gh-pages": "^4.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.18.6",
