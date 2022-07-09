@@ -10,13 +10,53 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./src/HW-arrays2/script.js":
+/*!**********************************!*\
+  !*** ./src/HW-arrays2/script.js ***!
+  \**********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nvar getAverage = function getAverage() {\n  for (var _len = arguments.length, numbers = new Array(_len), _key = 0; _key < _len; _key++) {\n    numbers[_key] = arguments[_key];\n  }\n\n  var numbersArr = numbers.slice().filter(function (item) {\n    return Number.isInteger(item);\n  });\n  var result = numbersArr.reduce(function (previousValue, currentValue) {\n    var result = previousValue + currentValue;\n    return result;\n  });\n  result /= numbersArr.length;\n  return result;\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (getAverage);\n\n//# sourceURL=webpack://webpack-homework/./src/HW-arrays2/script.js?");
+
+/***/ }),
+
+/***/ "./src/HW-arrays/script.js":
+/*!*********************************!*\
+  !*** ./src/HW-arrays/script.js ***!
+  \*********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"getPairs\": () => (/* binding */ getPairs),\n/* harmony export */   \"students\": () => (/* binding */ students)\n/* harmony export */ });\nvar students = [\"Олександр\", \"Ігор\", \"Олена\", \"Іра\", \"Олексій\", \"Світлана\"];\nvar themes = [\"Диференційне рівняння\", \"Теорія автоматів\", \"Алгоритми і структури даних\"];\nvar marks = [4, 5, 5, 3, 4, 5]; // 1. Розділіть студентів на пари(хлопець + дівчина) для работи над проєктом. У вас повинен вийти вкладений масив з парами студентів: [[\"Олександр\", \"Олена\"], [..], [...]];\n\nfunction getPairs(arrStudents) {\n  var result = [];\n  var girls = [];\n  var boys = [];\n\n  for (var i = 0; i < arrStudents.length; i++) {\n    if (arrStudents[i].endsWith(\"а\") || arrStudents[i].endsWith(\"я\")) {\n      girls.push(arrStudents[i]);\n    } else {\n      boys.push(arrStudents[i]);\n    }\n  }\n\n  for (var j = 0; j < arrStudents.length / 2; j++) {\n    result.unshift([girls[j], boys[j]]);\n  }\n\n  return result;\n}\n\n//# sourceURL=webpack://webpack-homework/./src/HW-arrays/script.js?");
+
+/***/ }),
+
+/***/ "./src/HW-functional-programing/script.js":
+/*!************************************************!*\
+  !*** ./src/HW-functional-programing/script.js ***!
+  \************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"getMiddleTaxes\": () => (/* binding */ getMiddleTaxes),\n/* harmony export */   \"ukraine\": () => (/* binding */ ukraine)\n/* harmony export */ });\nvar ukraine = {\n  tax: 0.195,\n  middleSalary: 1789,\n  vacancies: 11476\n};\nvar latvia = {\n  tax: 0.25,\n  middleSalary: 1586,\n  vacancies: 3921\n};\nvar litva = {\n  tax: 0.15,\n  middleSalary: 1509,\n  vacancies: 1114\n}; // 1. Створіть функцію getMyTaxes.call(country, salary) -> number; – яка рахує скільки податків ви заплатите як IT-спеціаліст в якійсь з країн. Функція повинна викликатись через call та працювати з даними через this\n\nfunction getMyTaxes(salary) {\n  var myTaxes = salary * this.tax;\n  return myTaxes;\n} // 2. Створіть функцію getMiddleTaxes.call(country) -> number; – яка рахує скільки у середньому податків платятт IT-спеціалісти у кожній країні. (tax * middleSalary). Функція повинна викликатись через call та працювати з даними через this\n\n\nfunction getMiddleTaxes() {\n  var middleTaxes = this.tax * this.middleSalary;\n  return middleTaxes;\n} // 3. Створіть функцію getTotalTaxes.call(country) -> number; – яка рахує, скільки всього податків платять IT-спеціалісти у кожній країні. (tax * middleSalary * vacancies). Функція повинна викликатись через call та працювати з даними через this\n\nfunction getTotalTaxes() {\n  var totalTaxes = getMiddleTaxes.call(this) * this.vacancies;\n  return totalTaxes;\n} // 4. Створіть функцію getMySalary(country) – яка буде писати в консоль об'єкт виду: { salary: number, taxes: number, profit: number } кожні 10 секунд. Значення salary – генеруйте випадковим чином у діапазоні 1500-2000. taxes – розраховується в залежності від вибраної країни та значення salary.\n\n\nfunction getMySalary() {\n  var timer = setInterval(function () {\n    var salary = Math.floor(Math.random() * (2001 - 1500) + 1500);\n    var taxes = Number((this.tax * salary).toFixed(2));\n    var profit = Number((salary - taxes).toFixed(2));\n    var result = {\n      salary: salary,\n      taxes: taxes,\n      profit: profit\n    };\n    console.log(result);\n  }.bind(this), 10000);\n  return timer;\n}\n\n//# sourceURL=webpack://webpack-homework/./src/HW-functional-programing/script.js?");
+
+/***/ }),
+
+/***/ "./src/HW-functions/script.js":
+/*!************************************!*\
+  !*** ./src/HW-functions/script.js ***!
+  \************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nfunction getNumberToPow(value, powValue) {\n  var result = value;\n\n  if (!powValue) {\n    return 1;\n  }\n\n  for (var i = 1; i < Math.abs(powValue); i++) {\n    result *= value;\n  }\n\n  if (powValue < 0) {\n    result = 1 / result;\n  }\n\n  return result;\n}\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (getNumberToPow);\n\n//# sourceURL=webpack://webpack-homework/./src/HW-functions/script.js?");
+
+/***/ }),
+
 /***/ "./src/script.js":
 /*!***********************!*\
   !*** ./src/script.js ***!
   \***********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.scss */ \"./src/style.scss\");\n/* harmony import */ var _src_images_homer_png__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../src/images/homer.png */ \"./src/images/homer.png\");\n\n\nvar homerElement = document.createElement(\"img\");\ndocument.body.append(homerElement);\nhomerElement.setAttribute('src', _src_images_homer_png__WEBPACK_IMPORTED_MODULE_1__[\"default\"]);\nvar header = document.querySelector(\".header\");\nheader.style.backgroundColor = \"black\";\nconsole.log(\"123123\");\n\n//# sourceURL=webpack://webpack-homework/./src/script.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.scss */ \"./src/style.scss\");\n/* harmony import */ var _HW_functions_script_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./HW-functions/script.js */ \"./src/HW-functions/script.js\");\n/* harmony import */ var _HW_arrays_script_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./HW-arrays/script.js */ \"./src/HW-arrays/script.js\");\n/* harmony import */ var _HW_arrays2_script_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./HW-arrays2/script.js */ \"./src/HW-arrays2/script.js\");\n/* harmony import */ var _HW_functional_programing_script_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./HW-functional-programing/script.js */ \"./src/HW-functional-programing/script.js\");\n/* harmony import */ var _src_images_homer_png__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../../src/images/homer.png */ \"./src/images/homer.png\");\n\n\n\n\n\n\nvar homerElement = document.createElement(\"img\");\ndocument.body.append(homerElement);\nhomerElement.setAttribute('src', _src_images_homer_png__WEBPACK_IMPORTED_MODULE_5__[\"default\"]);\nvar header = document.querySelector(\".header\");\nheader.style.backgroundColor = \"black\";\nconsole.log(\"HW functions: \".concat((0,_HW_functions_script_js__WEBPACK_IMPORTED_MODULE_1__[\"default\"])(3, 3)));\nconsole.log(\"HW arrays: \".concat((0,_HW_arrays_script_js__WEBPACK_IMPORTED_MODULE_2__.getPairs)(_HW_arrays_script_js__WEBPACK_IMPORTED_MODULE_2__.students)));\nconsole.log(\"HW arrays2: \".concat((0,_HW_arrays2_script_js__WEBPACK_IMPORTED_MODULE_3__[\"default\"])(3, 2, 7, 2, 2, 2, 7, 4, 9, 1)));\nconsole.log(\"HW functional-programing: \".concat(_HW_functional_programing_script_js__WEBPACK_IMPORTED_MODULE_4__.getMiddleTaxes.call(_HW_functional_programing_script_js__WEBPACK_IMPORTED_MODULE_4__.ukraine)));\n\n//# sourceURL=webpack://webpack-homework/./src/script.js?");
 
 /***/ }),
 
